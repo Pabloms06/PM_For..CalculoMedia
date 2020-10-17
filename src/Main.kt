@@ -9,4 +9,35 @@ fun main() {
     // El peso medio de los gatos es:
     // El peso medio de los perros es:
     // El peso medio de las personas es:
+    var countPersonas = 0
+    var pesoPersonas = 0
+
+    var countPerros = 0
+    var pesoPerros = 0
+
+    var countGatos = 0
+    var pesoGatos = 0
+
+    lista.forEach{
+
+        when(it){
+            is Persona -> {
+                countPersonas++
+                pesoPersonas += it.peso
+            }
+            is Perro -> {
+                countPerros++
+                pesoPerros += it.peso
+            }
+            is Gato -> {
+                countGatos++
+                pesoGatos += it.peso
+            }
+        }
+    }
+
+    println("El peso de medio de las personas es = ${pesoPersonas / countPersonas}")
+    println("El peso de medio de los gatos es = ${pesoGatos / countGatos}")
+    println("El peso de medio de los perros es = ${pesoPerros / countPerros}")
+
 }
